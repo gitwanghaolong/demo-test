@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.soeasycode.demo";
+option java_outer_classname = "GrpcTest";
+option objc_class_prefix = "soeasycode";
+
+package onlytest;
+
+//定义服务
+service Greeter {
+    rpc TestHelloWorld (TestRequest) returns (TestResponse) {
+    }
+}
+//定义消息类型
+message TestRequest {
+    string name = 1;
+}
+message TestResponse {
+    string message = 1;
+}
